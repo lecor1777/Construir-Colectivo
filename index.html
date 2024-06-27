@@ -8,6 +8,7 @@
             display: flex;
             margin: 0;
             font-family: 'Roboto', sans-serif;
+            height: 100vh;
         }
         .content {
             width: 50%;
@@ -17,10 +18,12 @@
             align-items: center;
             padding: 20px;
             text-align: center;
+            box-sizing: border-box;
         }
         .map {
             width: 50%;
             height: 100vh; /* Altura de la pantalla completa */
+            box-sizing: border-box;
         }
         iframe {
             width: 100%;
@@ -34,6 +37,7 @@
         p {
             font-size: 1.2em;
             color: #666;
+            margin: 0.5em 0;
         }
     </style>
 </head>
@@ -44,7 +48,7 @@
         <p>Este es un espacio que estamos creando para tener un mapa de obras detenidas.</p>
     </div>
     <div class="map">
-        <iframe src="<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1pdsoyULXDuBiwB-FvvuKNM8dhbMTa_w&ehbc=2E312F" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1pdsoyULXDuBiwB-FvvuKNM8dhbMTa_w&ehbc=2E312F" allowfullscreen></iframe>
     </div>
 </body>
 </html>
