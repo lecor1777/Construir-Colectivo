@@ -105,8 +105,8 @@
             margin-right: 0.5em;
         }
         .chart-container {
-            width: 90%;
-            max-width: 600px;
+            width: 100%;
+            max-width: 600px; /* Ajusta este valor según el tamaño del título */
             margin: 2em 0;
         }
     </style>
@@ -125,7 +125,9 @@
             </div>
             <div class="chart-wrapper">
                 <div class="chart-title">Estado de las Obras</div>
-                <canvas id="myPieChart"></canvas>
+                <div class="chart-container">
+                    <canvas id="myPieChart"></canvas>
+                </div>
                 <div class="legend">
                     <div class="legend-item">
                         <div class="legend-color" style="background-color: #36A2EB;"></div>
