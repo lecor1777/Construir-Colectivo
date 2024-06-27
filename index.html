@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>Mapa de Obras Detenidas</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=VT323&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             display: flex;
@@ -13,19 +14,19 @@
             align-items: center;
             text-align: center;
             flex-direction: column;
+            background-color: #f4f4f4;
         }
         .container {
             display: flex;
             width: 100%;
             height: 100%;
             flex-direction: column;
-        }
-        .content {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+        .content {
+            width: 90%;
+            max-width: 600px;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -72,12 +73,11 @@
             text-align: center;
         }
         .footer .milei {
-            font-size: 2em; /* Adjust font size to match width */
-            letter-spacing: 0.1em; /* Adjust spacing to match width */
+            font-size: 2em;
             display: block;
         }
         .footer .pone-la-plata {
-            font-size: 1.5em;
+            font-size: 2em;
             display: block;
         }
         @media (min-width: 768px) {
@@ -103,13 +103,15 @@
             #clock {
                 font-size: 2.5em;
             }
-            .footer .milei {
+            .footer .milei, .footer .pone-la-plata {
                 font-size: 3em;
-                letter-spacing: 0.2em;
+                letter-spacing: 0.1em;
             }
-            .footer .pone-la-plata {
-                font-size: 2.5em;
-            }
+        }
+        .chart-container {
+            width: 90%;
+            max-width: 600px;
+            margin: 2em 0;
         }
     </style>
 </head>
@@ -121,6 +123,9 @@
             <hr>
             <p id="clock-title">Los barrios populares se ven perjudicados hace</p>
             <p id="clock">Calculando tiempo...</p>
+            <div class="chart-container">
+                <canvas id="myPieChart"></canvas>
+            </div>
             <div class="footer">
                 <span class="milei">MILEI</span>
                 <span class="pone-la-plata">PONE LA PLATA</span>
@@ -145,7 +150,32 @@
         }
 
         setInterval(updateClock, 1000);
+
+        // Data for the pie chart
+        const data = {
+            labels: ['Label 1', 'Label 2', 'Label 3'],
+            datasets: [{
+                data: [10, 20, 30],
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+            }]
+        };
+
+        // Config for the pie chart
+        const config = {
+            type: 'pie',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        };
+
+        // Render the pie chart
+        window.onload = function() {
+            const ctx = document.getElementById('myPieChart').getContext('2d');
+            new Chart(ctx, config);
+        };
     </script>
 </body>
 </html>
-
