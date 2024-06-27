@@ -13,26 +13,23 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            flex-direction: column;
+            flex-direction: row;
             background-color: #f4f4f4;
         }
         .container {
             display: flex;
             width: 100%;
             height: 100%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            flex-direction: row;
         }
         .content {
-            width: 90%;
-            max-width: 600px;
+            width: 50%;
             padding: 20px;
             box-sizing: border-box;
         }
         .map {
-            width: 100%;
-            height: 50%;
+            width: 50%;
+            height: 100vh;
             box-sizing: border-box;
         }
         iframe {
@@ -41,11 +38,11 @@
             border: 0;
         }
         h1 {
-            font-size: 2em;
+            font-size: 2.5em;
             margin: 0.5em 0;
         }
         p {
-            font-size: 1em;
+            font-size: 1.2em;
             color: #666;
             margin: 0.5em 0;
         }
@@ -55,61 +52,34 @@
             margin: 1em 0;
         }
         #clock-title {
-            font-size: 1.5em;
+            font-size: 1.8em;
             color: #333;
             margin: 1em 0 0.5em 0;
         }
         #clock {
             font-family: 'Roboto', sans-serif;
-            font-size: 1.5em;
+            font-size: 2.5em;
             color: #333;
             margin: 0.5em 0;
         }
         .footer {
             margin-top: 2em;
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-weight: bold;
             color: #333;
             text-align: center;
         }
         .footer .milei {
-            font-size: 2em;
+            font-size: 3em;
             display: block;
         }
         .footer .pone-la-plata {
-            font-size: 2em;
+            font-size: 3em;
             display: block;
-        }
-        @media (min-width: 768px) {
-            body {
-                flex-direction: row;
-            }
-            .container {
-                flex-direction: row;
-            }
-            .content, .map {
-                width: 50%;
-                height: 100vh;
-            }
-            h1 {
-                font-size: 2.5em;
-            }
-            p {
-                font-size: 1.2em;
-            }
-            #clock-title {
-                font-size: 1.8em;
-            }
-            #clock {
-                font-size: 2.5em;
-            }
-            .footer .milei, .footer .pone-la-plata {
-                font-size: 3em;
-                letter-spacing: 0.1em;
-            }
+            letter-spacing: 0.1em;
         }
         .chart-container {
-            width: 90%;
+            width: 100%;
             max-width: 600px;
             margin: 2em 0;
         }
