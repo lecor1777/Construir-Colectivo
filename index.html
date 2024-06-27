@@ -13,23 +13,22 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            flex-direction: row;
             background-color: #f4f4f4;
         }
         .container {
             display: flex;
             width: 100%;
             height: 100%;
-            flex-direction: row;
+            align-items: center;
         }
-        .content {
+        .content, .chart-container {
             width: 50%;
             padding: 20px;
             box-sizing: border-box;
         }
         .map {
-            width: 50%;
-            height: 100vh;
+            width: 100%;
+            height: 50%;
             box-sizing: border-box;
         }
         iframe {
@@ -78,10 +77,32 @@
             display: block;
             letter-spacing: 0.1em;
         }
-        .chart-container {
-            width: 100%;
-            max-width: 600px;
-            margin: 2em 0;
+        .chart-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .chart-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            margin-top: 1em;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0 1em;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5em;
         }
     </style>
 </head>
@@ -93,16 +114,34 @@
             <hr>
             <p id="clock-title">Los barrios populares se ven perjudicados hace</p>
             <p id="clock">Calculando tiempo...</p>
-            <div class="chart-container">
-                <canvas id="myPieChart"></canvas>
-            </div>
             <div class="footer">
                 <span class="milei">MILEI</span>
                 <span class="pone-la-plata">PONE LA PLATA</span>
             </div>
         </div>
-        <div class="map">
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1pdsoyULXDuBiwB-FvvuKNM8dhbMTa_w&ehbc=2E312F&noprof=1" allowfullscreen></iframe>
+        <div class="chart-container">
+            <div class="chart-wrapper">
+                <div class="chart-title">Estado de las Obras</div>
+                <canvas id="myPieChart"></canvas>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #36A2EB;"></div>
+                        <span>Finalizadas</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #FFCE56;"></div>
+                        <span>Proceso de contratación</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #4BC0C0;"></div>
+                        <span>Proceso de recisión</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #FF6384;"></div>
+                        <span>Detenidas</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script>
@@ -125,7 +164,7 @@
         const data = {
             labels: ['Finalizadas', 'Proceso de contratación', 'Proceso de recisión', 'Detenidas'],
             datasets: [{
-                data: [476, 49, 40, 375], // Datos reales
+                data: [476, 49, 40, 654], // Datos actualizados
                 backgroundColor: ['#36A2EB', '#FFCE56', '#4BC0C0', '#FF6384'],
                 hoverBackgroundColor: ['#36A2EB', '#FFCE56', '#4BC0C0', '#FF6384']
             }]
