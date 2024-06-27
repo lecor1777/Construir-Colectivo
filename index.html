@@ -39,16 +39,43 @@
             color: #666;
             margin: 0.5em 0;
         }
+        #clock {
+            font-size: 1.5em;
+            color: #333;
+            margin: 1em 0;
+        }
+        #message {
+            font-size: 1.2em;
+            color: #666;
+        }
     </style>
 </head>
 <body>
     <div class="content">
         <h1>Mapa de Obras Detenidas</h1>
         <p>Aquí puedes agregar contenido adicional, como una descripción, estadísticas, etc.</p>
-        <p>Este es un espacio que estamos creando para tener un mapa de obras detenidas.</p>
+        <p id="clock">Calculando tiempo...</p>
+        <p id="message"></p>
     </div>
     <div class="map">
-        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1pdsoyULXDuBiwB-FvvuKNM8dhbMTa_w&ehbc=2E312F" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1pdsoyULXDuBiwB-FvvuKNM8dhbMTa_w&ehbc=2E312F&noprof=1" allowfullscreen></iframe>
     </div>
+    <script>
+        function updateClock() {
+            const assumedDate = new Date('2023-12-10T12:00:00'); // Fecha y hora de asunción
+            const now = new Date();
+            const diff = now - assumedDate;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('clock').innerText = `Tiempo transcurrido desde la asunción: ${days} días, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+            document.getElementById('message').innerText = `Hace ${days} días que el gobierno de Milei paró las obras.`;
+        }
+
+        setInterval(updateClock, 1000);
+    </script>
 </body>
 </html>
