@@ -25,6 +25,10 @@
             width: 50%;
             padding: 20px;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
         }
         .map {
             width: 50%;
@@ -82,7 +86,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100%;
         }
         .chart-title {
             font-size: 1.8em;
@@ -93,6 +96,8 @@
             display: flex;
             justify-content: center;
             margin-top: 1em;
+            font-size: 1.2em;
+            color: #333;
         }
         .legend-item {
             display: flex;
@@ -114,14 +119,12 @@
 <body>
     <div class="container">
         <div class="content">
-            <h1>Mapa de Obras Detenidas</h1>
-            <p>Desde que el gobierno de Milei asumió, las obras de integración socio urbana están detenidas.</p>
-            <hr>
-            <p id="clock-title">Los barrios populares se ven perjudicados hace</p>
-            <p id="clock">Calculando tiempo...</p>
-            <div class="footer">
-                <span class="milei">MILEI</span>
-                <span class="pone-la-plata">PONE LA PLATA</span>
+            <div>
+                <h1>Mapa de Obras Detenidas</h1>
+                <p>Desde que el gobierno de Milei asumió, las obras de integración socio urbana están detenidas.</p>
+                <hr>
+                <p id="clock-title">Los barrios populares se ven perjudicados hace</p>
+                <p id="clock">Calculando tiempo...</p>
             </div>
             <div class="chart-wrapper">
                 <div class="chart-title">Estado de las Obras</div>
@@ -146,6 +149,10 @@
                         <span>Detenidas</span>
                     </div>
                 </div>
+            </div>
+            <div class="footer">
+                <span class="milei">MILEI</span>
+                <span class="pone-la-plata">PONE LA PLATA</span>
             </div>
         </div>
         <div class="map">
