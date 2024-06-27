@@ -21,14 +21,14 @@
             height: 100%;
             align-items: center;
         }
-        .content, .chart-container {
+        .content {
             width: 50%;
             padding: 20px;
             box-sizing: border-box;
         }
         .map {
-            width: 100%;
-            height: 50%;
+            width: 50%;
+            height: 100vh;
             box-sizing: border-box;
         }
         iframe {
@@ -104,6 +104,11 @@
             height: 20px;
             margin-right: 0.5em;
         }
+        .chart-container {
+            width: 90%;
+            max-width: 600px;
+            margin: 2em 0;
+        }
     </style>
 </head>
 <body>
@@ -118,8 +123,6 @@
                 <span class="milei">MILEI</span>
                 <span class="pone-la-plata">PONE LA PLATA</span>
             </div>
-        </div>
-        <div class="chart-container">
             <div class="chart-wrapper">
                 <div class="chart-title">Estado de las Obras</div>
                 <canvas id="myPieChart"></canvas>
@@ -142,6 +145,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1pdsoyULXDuBiwB-FvvuKNM8dhbMTa_w&ehbc=2E312F&noprof=1" allowfullscreen></iframe>
         </div>
     </div>
     <script>
