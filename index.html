@@ -9,11 +9,20 @@
             display: flex;
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            height: 100vh;
+            min-height: 100vh;
             justify-content: center;
             align-items: center;
             text-align: center;
             background-color: #f4f4f4;
+        }
+        .main-container {
+            display: flex;
+            width: 100%;
+            max-width: 1920px;
+            height: 100vh;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
         }
         .container {
             display: flex;
@@ -99,6 +108,16 @@
             max-width: 600px; /* Ajusta este valor según el tamaño del título */
             margin: 1em 0;
         }
+        @media (max-width: 1920px) {
+            .main-container {
+                height: auto;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+            .content, .map {
+                height: auto;
+            }
+        }
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -115,28 +134,30 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="content">
-            <div>
-                <h1>Mapa de Obras Detenidas</h1>
-                <p>Desde que el gobierno de Milei asumió, las obras de integración socio urbana están detenidas.</p>
-                <hr>
-                <p id="clock-title">Los barrios populares se ven perjudicados hace</p>
-                <p id="clock">Calculando tiempo...</p>
-            </div>
-            <div class="chart-wrapper">
-                <div class="chart-title">Estado de las Obras</div>
-                <div class="chart-container">
-                    <canvas id="myPieChart"></canvas>
+    <div class="main-container">
+        <div class="container">
+            <div class="content">
+                <div>
+                    <h1>Mapa de Obras Detenidas</h1>
+                    <p>Desde que el gobierno de Milei asumió, las obras de integración socio urbana están detenidas.</p>
+                    <hr>
+                    <p id="clock-title">Los barrios populares se ven perjudicados hace</p>
+                    <p id="clock">Calculando tiempo...</p>
+                </div>
+                <div class="chart-wrapper">
+                    <div class="chart-title">Estado de las Obras</div>
+                    <div class="chart-container">
+                        <canvas id="myPieChart"></canvas>
+                    </div>
+                </div>
+                <div class="footer">
+                    <span class="milei">MILEI</span>
+                    <span class="pone-la-plata">PONE LA PLATA</span>
                 </div>
             </div>
-            <div class="footer">
-                <span class="milei">MILEI</span>
-                <span class="pone-la-plata">PONE LA PLATA</span>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1pdsoyULXDuBiwB-FvvuKNM8dhbMTa_w&ehbc=2E312F&noprof=1" allowfullscreen></iframe>
             </div>
-        </div>
-        <div class="map">
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1pdsoyULXDuBiwB-FvvuKNM8dhbMTa_w&ehbc=2E312F&noprof=1" allowfullscreen></iframe>
         </div>
     </div>
     <script>
