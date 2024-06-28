@@ -28,6 +28,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            height: 100%;
         }
         .map {
             width: 50%;
@@ -40,11 +41,11 @@
             border: 0;
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 2em; /* Ajustado para resoluciones más bajas */
             margin: 0.5em 0;
         }
         p {
-            font-size: 1.2em;
+            font-size: 1em; /* Ajustado para resoluciones más bajas */
             color: #666;
             margin: 0.5em 0;
         }
@@ -54,29 +55,29 @@
             margin: 1em 0;
         }
         #clock-title {
-            font-size: 1.8em;
+            font-size: 1.5em; /* Ajustado para resoluciones más bajas */
             color: #333;
             margin: 1em 0 0.5em 0;
         }
         #clock {
             font-family: 'Roboto', sans-serif;
-            font-size: 2.5em;
+            font-size: 1.5em; /* Ajustado para resoluciones más bajas */
             color: #333;
             margin: 0.5em 0;
         }
         .footer {
-            margin-top: 2em;
-            font-size: 1.5em;
+            margin-top: 1em; /* Ajustado para resoluciones más bajas */
+            font-size: 1.2em; /* Ajustado para resoluciones más bajas */
             font-weight: bold;
             color: #333;
             text-align: center;
         }
         .footer .milei {
-            font-size: 3em;
+            font-size: 2em; /* Ajustado para resoluciones más bajas */
             display: block;
         }
         .footer .pone-la-plata {
-            font-size: 3em;
+            font-size: 2em; /* Ajustado para resoluciones más bajas */
             display: block;
             letter-spacing: 0.1em;
         }
@@ -85,16 +86,17 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            flex-grow: 1; /* Permite que el gráfico crezca para ocupar espacio disponible */
         }
         .chart-title {
-            font-size: 1.8em;
+            font-size: 1.5em; /* Ajustado para resoluciones más bajas */
             color: #333;
             margin-bottom: 0.5em;
         }
         .chart-container {
             width: 100%;
             max-width: 600px; /* Ajusta este valor según el tamaño del título */
-            margin: 2em 0;
+            margin: 1em 0;
         }
         @media (max-width: 768px) {
             .container {
@@ -184,6 +186,9 @@
             new Chart(ctx, config);
         };
     </script>
+</body>
+</html>
+
 </body>
 </html>
 
