@@ -23,12 +23,13 @@
         }
         .content {
             width: 50%;
+            max-height: 800px;
             padding: 20px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 100%;
+            overflow: auto;
         }
         .map {
             width: 50%;
@@ -106,6 +107,9 @@
             .content, .map {
                 width: 100%;
                 height: auto;
+            }
+            .map {
+                height: 300px; /* Ajusta la altura del mapa para dispositivos móviles */
             }
         }
     </style>
@@ -188,6 +192,7 @@
     </script>
 </body>
 </html>
+
 
 </body>
 </html>
